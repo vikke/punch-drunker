@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @punch.user_id %>
+</p>
+
+<p>
+  <strong>Punch at:</strong>
+  <%= @punch.punch_at %>
+</p>
+
+<%= link_to 'Edit', edit_punch_path(@punch) %> |
+<%= link_to 'Back', punches_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Punches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Punch at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @punches.each do |punch| %>
+      <tr>
+        <td><%= punch.user_id %></td>
+        <td><%= punch.punch_at %></td>
+        <td><%= link_to 'Show', punch %></td>
+        <td><%= link_to 'Edit', edit_punch_path(punch) %></td>
+        <td><%= link_to 'Destroy', punch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Punch', new_punch_path %>
