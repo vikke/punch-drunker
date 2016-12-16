@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mail: MyString
+  provider: MyString
+  oauth_token: MyString
+  punch_token: MyString
+
+two:
+  mail: MyString
+  provider: MyString
+  oauth_token: MyString
+  punch_token: MyString
