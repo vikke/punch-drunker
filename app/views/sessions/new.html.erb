@@ -1,4 +1,6 @@
 <% if flash[:notice] %>
   <%= flash[:notice] %>
 <% end %>
+<% if current_user.blank? %>
 <a href='/auth/google_oauth2'>googleでログイン</a>
+<% end %>

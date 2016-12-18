@@ -3,7 +3,9 @@ class SessionsController < ApplicationController
   skip_before_action :login_check, only: :new
 
   def new
-
+    if current_user.present?
+      redirect_to punches_url
+    end
   end
 
   def create

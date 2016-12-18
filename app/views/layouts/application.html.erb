@@ -13,8 +13,7 @@
 
     <p/>
     <% if current_user.present? %>
-
-      <div>token:<%= current_user.punch_token %></div>
+      <div>token:<%= current_user.punch_token %> / <%= link_to 'regenerate', regen_path %></div>
       <div><%= link_to 'logout', logout_path %></div>
     <% end %>
   </body>
