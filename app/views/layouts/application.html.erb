@@ -12,8 +12,10 @@
     <%= yield %>
 
     <p/>
-    <% if login? %>
-      <%= link_to 'logout', logout_path %>
+    <% if current_user.present? %>
+
+      <div>token:<%= current_user.punch_token %></div>
+      <div><%= link_to 'logout', logout_path %></div>
     <% end %>
   </body>
 </html>
