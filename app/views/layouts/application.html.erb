@@ -10,5 +10,10 @@
 
   <body>
     <%= yield %>
+
+    <p/>
+    <% if login? %>
+      <%= link_to 'logout', logout_path %>
+    <% end %>
   </body>
 </html>
