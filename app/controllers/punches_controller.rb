@@ -9,7 +9,11 @@ class PunchesController < ApplicationController
 
   # GET /punches/1
   # GET /punches/1.json
-  def show
+  def punch
+    if (user = User.where(punch_token: params[:token]).first).blank?
+      raise new ActionController::InvalidAuthenticityToken
+    end
+    binding.pry
   end
 
   # GET /punches/new
@@ -64,7 +68,7 @@ class PunchesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_punch
-      @punch = Punch.find(params[:id])
+      @punch = Punch.find(params[:token])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

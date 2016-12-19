@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/regen', to: 'users#regenerate_token'
 
-  resources :punches
+  get '/punches', to: 'punches#index'
+  get '/punches/:token', to: 'punches#punch'
+  # resources :punches
   resources :users
 end
