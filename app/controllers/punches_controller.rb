@@ -1,5 +1,6 @@
 class PunchesController < ApplicationController
   before_action :set_punch, only: [:show, :edit, :update, :destroy]
+  skip_before_action :login_check, only: :punch
 
   # GET /punches
   # GET /punches.json
