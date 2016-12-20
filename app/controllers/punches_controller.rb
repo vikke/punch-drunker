@@ -4,16 +4,16 @@ class PunchesController < ApplicationController
   # GET /punches
   # GET /punches.json
   def index
-    @punches = Punch.all
+    @punches = Punch.where(user_id: current_user.id).all
   end
 
   # GET /punches/1
   # GET /punches/1.json
   def punch
     if (user = User.where(punch_token: params[:token]).first).blank?
-      raise new ActionController::InvalidAuthenticityToken
+      raise
     end
-    binding.pry
+    Punch.create(user_id: user.id, punch_at: Time.now)
   end
 
   # GET /punches/new

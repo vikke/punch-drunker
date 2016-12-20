@@ -6,6 +6,9 @@ class SessionsController < ApplicationController
     if current_user.present?
       redirect_to punches_url
     end
+  rescue
+    reset_session
+    redirect_to root_url
   end
 
   def create

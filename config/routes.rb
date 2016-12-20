@@ -8,6 +8,5 @@ Rails.application.routes.draw do
 
   get '/punches', to: 'punches#index'
   get '/punches/:token', to: 'punches#punch'
-  # resources :punches
   resources :users
 end
