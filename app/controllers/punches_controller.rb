@@ -4,7 +4,8 @@ class PunchesController < ApplicationController
   # GET /punches
   # GET /punches.json
   def index
-    @punches = Punch.where(user_id: current_user.id).all
+    # select to_char(punch_at + cast('9 hours' as interval), 'YYYYMMDD') as d, min(punch_at), max(punch_at) from punches where user_id = 1 group by d;
+    @punches = Punch.punch_list(current_user.id)
   end
 
   # GET /punches/1

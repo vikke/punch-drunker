@@ -13,7 +13,9 @@
   <tbody>
     <% @punches.each do |punch| %>
       <tr>
-        <td><%= punch.punch_at %></td>
+        <td><%= punch.d %></td>
+        <td><%= punch.start.in_time_zone('Tokyo').strftime('%H:%M') %></td>
+        <td><%= punch.end.in_time_zone('Tokyo').strftime('%H:%M') %></td>
       </tr>
     <% end %>
   </tbody>
